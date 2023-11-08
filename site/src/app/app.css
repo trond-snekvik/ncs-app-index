@@ -80,7 +80,7 @@ body {
 }
 
 .hoverable-icon {
-    @apply cursor-pointer opacity-90 transition-opacity hover:opacity-100;
+    @apply cursor-pointer opacity-70 transition-opacity hover:opacity-100;
 }
 
 .description a {

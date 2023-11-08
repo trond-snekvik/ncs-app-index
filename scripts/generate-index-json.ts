@@ -89,7 +89,8 @@ async function fetchOrgData({
             kind,
             type: userData.data.type as (typeof validOrgTypes)[number],
             urls: {
-                support: userData.data.html_url,
+                home: orgIndex.links?.home ?? userData.data.blog ?? userData.data.html_url,
+                help: orgIndex.links?.help,
                 email: userData.data.email ?? undefined,
                 blog: userData.data.blog ?? undefined,
                 twitter: userData.data.twitter_username ?? undefined,

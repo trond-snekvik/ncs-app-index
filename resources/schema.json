@@ -10,6 +10,23 @@
             "type": "string",
             "description": "A short sentence describing the organization."
         },
+        "links": {
+            "type": "object",
+            "description": "Optional links various organization resources.",
+            "properties": {
+                "home": {
+                    "type": "string",
+                    "description": "URL to the organization's website.",
+                    "format": "uri"
+                },
+                "help": {
+                    "type": "string",
+                    "description": "URL to the organization's primary resource for getting help. This can be a forum, documentation website or customer support portal.",
+                    "format": "uri"
+                }
+            },
+            "additionalProperties": false
+        },
         "apps": {
             "type": "array",
             "items": {

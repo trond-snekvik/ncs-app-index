@@ -12,6 +12,8 @@ import {
     CommandLineIcon,
     ArrowTopRightOnSquareIcon,
     CheckBadgeIcon,
+    LifebuoyIcon,
+    QuestionMarkCircleIcon,
 } from '@heroicons/react/20/solid';
 
 import { NormalisedApp } from '../schema';
@@ -54,7 +56,7 @@ function AppBlock({ app, setShowingAppId }: Props): JSX.Element {
 
                     <div className="flex items-center gap-1">
                         <h2 className="text-md text-gray-600">
-                            <a href={app.owner.urls.support}>{app.owner.name}</a>
+                            <a href={app.owner.urls.home}>{app.owner.name}</a>
                         </h2>
 
                         {app.owner.kind !== 'External' && (
@@ -66,10 +68,10 @@ function AppBlock({ app, setShowingAppId }: Props): JSX.Element {
                             />
                         )}
 
-                        {app.owner.urls.email && (
-                            <a href={`mailto:${app.owner.urls.email}`}>
-                                <EnvelopeIcon
-                                    title="Send Email"
+                        {app.owner.urls.help && (
+                            <a href={app.owner.urls.help}>
+                                <QuestionMarkCircleIcon
+                                    title="Visit help site"
                                     className={classNames(smallIconClass, 'hoverable-icon')}
                                 />
                             </a>
@@ -82,7 +84,9 @@ function AppBlock({ app, setShowingAppId }: Props): JSX.Element {
                 <TagList app={app} />
             </div>
 
-            <Markdown disallowedElements={["img"]} className="description">{app.description}</Markdown>
+            <Markdown disallowedElements={['img']} className="description">
+                {app.description}
+            </Markdown>
 
             <div className="flex flex-wrap items-center gap-2">
                 <VSCodeButton app={app} />

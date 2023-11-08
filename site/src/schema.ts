@@ -96,6 +96,24 @@ export const orgIndexSchema = {
             type: 'string',
             description: 'A short sentence describing the organization.',
         },
+        links: {
+            type: 'object',
+            description: 'Optional links various organization resources.',
+            properties: {
+                home: {
+                    type: 'string',
+                    description: "URL to the organization's website.",
+                    format: 'uri',
+                },
+                help: {
+                    type: 'string',
+                    description:
+                        "URL to the organization's primary resource for getting help. This can be a forum, documentation website or customer support portal.",
+                    format: 'uri',
+                },
+            },
+            additionalProperties: false,
+        },
         apps: {
             type: 'array',
             items: appMetadataSchema,
@@ -122,12 +140,12 @@ export const orgSchema = {
         urls: {
             type: 'object',
             properties: {
-                support: { type: 'string', format: 'uri' },
+                help: { type: 'string', format: 'uri' },
+                home: { type: 'string', format: 'uri' },
                 email: { type: 'string', format: 'uri' },
                 blog: { type: 'string', format: 'uri' },
                 twitter: { type: 'string', format: 'uri' },
             },
-            required: ['support'],
             additionalProperties: false,
         },
     },
