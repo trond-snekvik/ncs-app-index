@@ -1,6 +1,10 @@
 {
     "name": "nRF Connect",
     "description": "Official nRF Connect SDK applications",
+    "links": {
+        "home": "https://nordicsemi.com",
+        "help": "https://devzone.nordicsemi.com"
+    },
     "apps": [
         {
             "name": "ncs-example-application",

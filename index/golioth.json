@@ -1,6 +1,10 @@
 {
     "name": "golioth",
     "description": "Golioth Cloud platform, which includes a device SDK, example code, and Reference Designs",
+    "links": {
+        "home": "https://golioth.io",
+        "help": "https://docs.golioth.io"
+    },
     "apps": [
         {
             "name": "reference-design-template",
